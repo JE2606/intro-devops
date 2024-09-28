@@ -1,8 +1,5 @@
-const { exec } = require("child_process");
+const helloWorld = require('./index');
 
-test("Ejecuta el programa y muestra 'Hola Mundo'", (done) => {
-    exec("node index.js", (error, stdout) => {
-        expect(stdout.trim()).toBe("Hola Mundo");
-        done();
-    });
+test("Debería retornar 'Hola Mundo'", () => {
+    expect(helloWorld()).toBe("Hola Mundo");
 });
